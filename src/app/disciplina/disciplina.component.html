@@ -1,0 +1,40 @@
+<h2>Disciplinas</h2>
+<p>
+  <label>Nome </label>
+  <input #nome type="text" />
+</p>
+<p>
+  <label>dia </label>
+  <input #dia type="text" />
+</p>
+<p>
+  <label>horario </label>
+  <input #horario type="text" />
+</p>
+<button
+  (click)="
+    disciplina.add({
+      nome: nome.value,
+      diaSemana: dia.value,
+      horario: horario.value
+    })
+  "
+>
+  Adicionar disciplina
+</button>
+
+<table border="1">
+  <tr>
+    <th>Nome</th>
+    <th>Dia da semana</th>
+    <th>Horário</th>
+    <th>Excluir</th>
+  </tr>
+
+  <tr *ngFor="let disciplin of disciplina.getList(); index as i">
+    <td>{{ disciplin.nome }}</td>
+    <td>{{ disciplin.diaSemana }}</td>
+    <td>{{ disciplin.horario }}</td>
+    <td><button (click)="disciplina.remove(i)">-</button></td>
+  </tr>
+</table>

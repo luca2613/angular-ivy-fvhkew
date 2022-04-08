@@ -1,0 +1,8 @@
+<h2>Intervalo</h2>
+<label>Digite o intervalo: </label>
+<input type="text" [(ngModel)]="intervalo" />
+<button (click)="definirIntervalo()">Definir</button>
+<h3>Temporizador</h3>
+{{ timer.getCount() }}
+<button (click)="timer.stop()">Parar</button> /
+<button (click)="timer.zerar()">zerar</button>
